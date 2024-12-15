@@ -12,7 +12,7 @@ export class CarsService {
       thumbnail: '/assets/images/2025-toyota-camry/main.avif',
       details: [
         '/assets/images/2025-toyota-camry/2025-toyota-camry-1.avif',
-        '/assets/images/2025-toyota-camry/2025-toyota-camry-2.avif',
+        '/assets/images/2025-toyota-camry/2025-toyota-camry-2.avif'
       ]
     },
     {
@@ -24,7 +24,7 @@ export class CarsService {
         '/assets/images/hyundai-tucson/hyundai-tucson-2.jpeg',
         '/assets/images/hyundai-tucson/hyundai-tucson-3.jpeg',
         '/assets/images/hyundai-tucson/hyundai-tucson-4.avif',
-        '/assets/images/hyundai-tucson/hyundai-tucson-5.jpeg',
+        '/assets/images/hyundai-tucson/hyundai-tucson-5.jpeg'
       ]
     },
     {

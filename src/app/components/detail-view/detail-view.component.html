@@ -2,8 +2,8 @@
   <div class="detail-container" *ngIf="car">
     <button class="close-button" (click)="onClose()">✕</button>
 
+    <h1 class="car-name">{{car.name}}</h1>
     <div class="main-image">
-      <h1>{{car.name}}</h1>
       <img [src]="selectedImage" alt="Selected car" />
     </div>
 
