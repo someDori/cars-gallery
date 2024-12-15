@@ -1,0 +1,19 @@
+.single-car-element {
+  transition: opacity 0.3s ease;
+  aspect-ratio: 16 / 9;
+  border: 1px solid gray;
+  border-radius: 8px;
+  cursor: pointer;
+
+  image {
+    border-radius: 8px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  p {
+    margin: 1rem;
+  }
+}

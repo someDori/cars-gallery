@@ -1,0 +1,10 @@
+<div class="image-grid">
+  <div
+    *ngFor="let car of cars"
+    (click)="onCarClick(car)"
+  >
+    <app-single-car
+      [car]="car"
+    ></app-single-car>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="detail-view">
+  <div class="detail-container">
+    <button class="close-button" (click)="onClose()">✕</button>
+
+    <div class="main-image">
+      <img [src]="selectedImage" alt="Selected car" />
+    </div>
+
+    <div class="thumbnail-grid"
+         *ngIf="car">
+      <div
+        class="thumbnail"
+        [class.active]="selectedImage === car.thumbnail"
+        (click)="selectImage(car.thumbnail)"
+      >
+        <img [src]="car.thumbnail" alt="Thumbnail" />
+      </div>
+      <div
+        *ngFor="let detail of car.details"
+        class="thumbnail"
+        [class.active]="selectedImage === detail"
+        (click)="selectImage(detail)"
+      >
+        <img [src]="detail" [alt]="'Detail'" />
+      </div>
+    </div>
+  </div>
+</div>
