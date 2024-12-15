@@ -13,7 +13,6 @@ export class AppComponent {
   defaultLang = "";
 
   constructor(private translate: TranslateService) {
-    // Set default language
     this.translate.setDefaultLang('en');
     this.defaultLang = this.translate.defaultLang;
   }

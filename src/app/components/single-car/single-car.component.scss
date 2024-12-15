@@ -1,7 +1,7 @@
 .single-car-element {
   transition: opacity 0.3s ease;
   aspect-ratio: 16 / 9;
-  border: 1px solid gray;
+  border: 1px solid var(--gray);
   border-radius: 8px;
   cursor: pointer;
 
