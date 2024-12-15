@@ -1,14 +1,13 @@
 <div class="detail-view">
-  <div class="detail-container">
+  <div class="detail-container" *ngIf="car">
     <button class="close-button" (click)="onClose()">✕</button>
 
     <div class="main-image">
-      <h1>{{car?.name}}</h1>
+      <h1>{{car.name}}</h1>
       <img [src]="selectedImage" alt="Selected car" />
     </div>
 
-    <div class="thumbnail-flex"
-         *ngIf="car">
+    <div class="thumbnail-flex">
       <div
         class="thumbnail"
         [class.active]="selectedImage === car.thumbnail"
