@@ -3,10 +3,11 @@
     <button class="close-button" (click)="onClose()">✕</button>
 
     <div class="main-image">
+      <h1>{{car?.name}}</h1>
       <img [src]="selectedImage" alt="Selected car" />
     </div>
 
-    <div class="thumbnail-grid"
+    <div class="thumbnail-flex"
          *ngIf="car">
       <div
         class="thumbnail"

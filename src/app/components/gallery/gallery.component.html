@@ -1,16 +1,14 @@
 <div class="gallery-container">
-  <h1>Available Cars</h1>
-  <ng-container *ngIf="!selectedCar; else detailView">
+  <h1>{{ 'AVAILABLE_CARS' | translate }}</h1>
+  @if (!selectedCar) {
     <app-image-grid
       [cars]="cars"
       (carSelected)="onCarSelect($event)"
     ></app-image-grid>
-  </ng-container>
-
-  <ng-template #detailView>
+  } @else {
     <app-detail-view
       [car]="selectedCar"
       (close)="onClose()"
     ></app-detail-view>
-  </ng-template>
+  }
 </div>

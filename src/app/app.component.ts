@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {GalleryComponent} from './components/gallery/gallery.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +10,16 @@ import {GalleryComponent} from './components/gallery/gallery.component';
 })
 export class AppComponent {
   title = 'cars-gallery';
+  defaultLang = "";
+
+  constructor(private translate: TranslateService) {
+    // Set default language
+    this.translate.setDefaultLang('en');
+    this.defaultLang = this.translate.defaultLang;
+  }
+
+  public switchLanguage(language: string): void {
+    this.translate.use(language);
+    this.defaultLang = this.translate.currentLang;
+  }
 }

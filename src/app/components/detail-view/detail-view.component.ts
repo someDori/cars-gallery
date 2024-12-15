@@ -29,5 +29,4 @@ export class DetailViewComponent {
   selectImage(image: string): void {
     this.selectedImage = image;
   }
-
 }
