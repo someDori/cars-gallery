@@ -1,0 +1,20 @@
+<div class="header-container">
+  <div class="header-title">
+    <h1>{{ headerText | translate }}</h1>
+  </div>
+
+  <div class="header-details">
+    <div class="language-switcher">
+      <button (click)="translationService.defaultLang == 'en' ?
+      translationService.switchLanguage('ge') :
+      translationService.switchLanguage('en')">
+        {{translationService.defaultLang == 'en' ? 'ქართული' : "English"}}
+      </button>
+    </div>
+
+    <div class="contact-info">
+      <h4>{{"CONTACT_US" | translate}}: info&#64;example.com</h4>
+      <h4>{{"PHONE" | translate}}: +995 599 123 456</h4>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,20 @@
-<div class="gallery-container">
-  <h1>{{ 'AVAILABLE_CARS' | translate }}</h1>
-  @if (!selectedCar) {
-    <app-image-grid
-      [cars]="cars"
-      (carSelected)="onCarSelect($event)"
-    ></app-image-grid>
-  } @else {
-    <app-detail-view
-      [car]="selectedCar"
-      (close)="onClose()"
-    ></app-detail-view>
-  }
+<div class="details-container">
+  <div class="gallery-container">
+    <div class="gallery-title">
+      <h2>{{ 'AVAILABLE_CARS' | translate }}</h2>
+    </div>
+    @if (!selectedCar) {
+      <app-image-grid
+        [cars]="cars"
+        (carSelected)="onCarSelect($event)"
+      ></app-image-grid>
+    } @else {
+      <app-detail-view
+        [car]="selectedCar"
+        (close)="onClose()"
+      ></app-detail-view>
+    }
+  </div>
+  <div class="price-container">
+  </div>
 </div>

@@ -1,8 +1,8 @@
 import {Component, inject} from '@angular/core';
 import { Car } from '../../models/car.model';
 import { CarsService } from '../../services/cars.service';
-import {ImageGridComponent} from '../image-grid/image-grid.component';
-import {DetailViewComponent} from '../detail-view/detail-view.component';
+import { ImageGridComponent } from '../image-grid/image-grid.component';
+import { DetailViewComponent } from '../detail-view/detail-view.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
