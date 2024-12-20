@@ -5,10 +5,10 @@
 
   <div class="header-details">
     <div class="language-switcher">
-      <button (click)="translationService.defaultLang == 'en' ?
+      <button (click)="translationService.currentLanguage == 'en' ?
       translationService.switchLanguage('ge') :
       translationService.switchLanguage('en')">
-        {{translationService.defaultLang == 'en' ? 'ქართული' : "English"}}
+        {{translationService.currentLanguage == 'en' ? '🇬🇪 GE' : "🇬🇧 EN"}}
       </button>
     </div>
 

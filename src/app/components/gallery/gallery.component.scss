@@ -1,23 +1,7 @@
-.details-container {
-  margin: 3rem;
-  padding: 20px;
-  position: relative;
-  background-color: white;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, .1);
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border-radius: 5px;
-
-  .gallery-container {
-    .gallery-title {
-      h2 {
-        margin-bottom: 1.5rem;
-      }
+.gallery-container {
+  .gallery-title {
+    h2 {
+      margin-bottom: 1.5rem;
     }
-  }
-
-  .price-container {
-
   }
 }

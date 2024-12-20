@@ -12,10 +12,11 @@ import {TranslatePipe} from '@ngx-translate/core';
 })
 export class HeaderComponent {
   public getScreenWidth: any;
-  public headerText: any = this.headerTextSize();
+  public headerText: any;
 
   ngOnInit() {
     this.getScreenWidth = window.innerWidth;
+    this.headerText = this.headerTextSize();
   }
 
   constructor(public translationService: TranslationService) {}

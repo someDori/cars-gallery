@@ -5,16 +5,30 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class TranslationService {
-  currentLanguage: string = 'en';
-  defaultLang = "";
+  public currentCurrency: string = "";
+  public currentLanguage: string = "";
 
   constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang(this.currentLanguage);
-    this.defaultLang = this.translate.defaultLang;
+    const savedLang = localStorage.getItem('language') || 'en';
+    this.translate.setDefaultLang(savedLang);
+    this.translate.use(savedLang);
+
+    this.updateLanguageAndCurrency(savedLang);
   }
 
   switchLanguage(language: string): void {
+    console.log(language);
     this.translate.use(language);
-    this.defaultLang = this.translate.currentLang;
+    localStorage.setItem('language', language);
+    this.updateLanguageAndCurrency(language);
+  }
+
+  private updateLanguageAndCurrency(language: string): void {
+    this.currentLanguage = language;
+    this.currentCurrency = this.switchCurrency(language);
+  }
+
+  private switchCurrency(language: string): string {
+    return language === 'ge' ? 'GEL' : 'USD';
   }
 }
