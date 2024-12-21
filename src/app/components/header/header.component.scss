@@ -18,6 +18,10 @@
         font-weight: bold;
         margin: 0;
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
       }
     }
     .header-details {
@@ -39,6 +43,7 @@
           display: inline-block;
           font-size: 1rem;
           cursor: pointer;
+          border-radius: 90px;
         }
 
         *:hover {

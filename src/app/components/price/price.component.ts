@@ -9,13 +9,16 @@ import {CurrencyService} from '../../services/currency.service';
   styleUrl: './price.component.scss'
 })
 export class PriceComponent {
-  private priceInGel: number = 60;
-  private priceInUSD: number | null = null;
-  private error: string = '';
+  public priceInGel: number = 60;
+  public priceInUSD: number | null = null;
+  public defaultPriceInUSD: number = 25;
+  public error: string = '';
   public language: string = "";
 
-  constructor(public translationService: TranslationService, private currencyService: CurrencyService) {
-  }
+  constructor(
+    public translationService: TranslationService,
+    private currencyService: CurrencyService
+  ) {}
 
   ngOnInit() {
     this.currencyService.convertAmount(this.priceInGel, 'GEL', 'USD').subscribe({
@@ -24,6 +27,7 @@ export class PriceComponent {
       },
       error: (error) => {
         this.error = error.message;
+        this.priceInUSD = this.defaultPriceInUSD;
       }
     })
   }
@@ -32,6 +36,7 @@ export class PriceComponent {
     if (this.translationService.currentLanguage === 'ge') {
       return `იქირავე ${this.priceInGel} ლარიდან`;
     }
-    return `Rent from ${this.priceInUSD} dollars`;
+    const usdPrice = this.priceInUSD ?? this.defaultPriceInUSD;
+    return `Rent from ${usdPrice} dollars`;
   }
 }
