@@ -1,7 +1,7 @@
 <div class="detail-view">
   @if (attribute) {
     <div class="detail-container">
-      <button class="close-button" (close)="onClose()">x</button>
+      <button class="close-button" (click)="onClose()">x</button>
 
       <h1 class="attribute-name">{{attribute.name}}</h1>
       <div class="main-image">
@@ -11,14 +11,15 @@
       <div class="thumbnail-flex">
         <div class="thumbnail"
              [class.active]="selectedAttribute === attribute.thumbnail"
-             (click)="selectedImage(attribute.thumbnail)"
+             (click)="selectImage(attribute.thumbnail)"
         >
           <img [src]="attribute.thumbnail" alt="Thumbnail">
         </div>
-          <div class="thumbnail"
+          <div
             *ngFor="let detail of attribute.details"
+            class="thumbnail"
             [class.active] = "selectedAttribute === detail"
-            (click)="selectedImage(detail)"
+            (click)="selectImage(detail)"
           >
             <img [src]="detail" [alt]="'Detail'" />
           </div>

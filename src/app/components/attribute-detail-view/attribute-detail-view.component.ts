@@ -25,7 +25,7 @@ export class AttributeDetailViewComponent {
     this.close.emit();
   }
 
-  selectedImage(image: string): void {
+  selectImage(image: string): void {
     this.selectedAttribute = image;
   }
 }

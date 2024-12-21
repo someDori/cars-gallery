@@ -27,7 +27,7 @@ export class GalleryComponent {
     }, 200)
   }
 
-  onCarSelect(car: Car): void {
+  onCarSelected(car: Car): void {
     setTimeout(() => {
       this.selectedCar = car;
       }, 100)

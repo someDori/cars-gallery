@@ -29,10 +29,12 @@ export class CampingAttributesComponent {
   onAttributeSelected(attribute: CampingAttribute): void {
     setTimeout(() => {
       this.selectedAttribute = attribute;
-    }, 450)
+    }, 100)
   }
 
   onClose(): void {
-    this.selectedAttribute = null;
+    setTimeout(() => {
+      this.selectedAttribute = null;
+    }, 100)
   }
 }

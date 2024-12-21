@@ -6,7 +6,7 @@
     @if (!selectedCar) {
       <app-image-grid
         [cars]="cars"
-        (carSelected)="onCarSelect($event)"
+        (carSelected)="onCarSelected($event)"
       ></app-image-grid>
     } @else {
       <app-detail-view
