@@ -1,0 +1,7 @@
+<div class="locations-list-container">
+  <div class="locations-list">
+    @for (location of locationsService.getLocations(); track location) {
+      <app-single-location [location]="location"></app-single-location>
+    }
+  </div>
+</div>
