@@ -1,0 +1,10 @@
+<div class="image-grid">
+  <div
+    *ngFor="let attribute of attributes"
+    (click)="onAttributeClick(attribute)"
+  >
+    <app-single-product
+      [element]="attribute"
+    ></app-single-product>
+  </div>
+</div>

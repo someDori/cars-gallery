@@ -1,23 +1,22 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Car} from '../../models/car.model';
-import {NgForOf, NgIf} from '@angular/common';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-detail-view',
   imports: [
     NgForOf,
-    NgIf
   ],
   templateUrl: './detail-view.component.html',
   styleUrl: './detail-view.component.scss'
 })
 export class DetailViewComponent {
-  @Input() car: Car | null = null;  // Mark as potentially null
+  @Input() car: Car | null = null;
   @Output() close = new EventEmitter<void>();
   selectedImage: string = '';
 
   ngOnInit(): void {
-    if (this.car) {  // Add null check
+    if (this.car) {
       this.selectedImage = this.car.thumbnail;
     }
   }

@@ -1,28 +1,30 @@
 <div class="detail-view">
-  <div class="detail-container" *ngIf="car">
-    <button class="close-button" (click)="onClose()">✕</button>
+  @if (car) {
+    <div class="detail-container">
+      <button class="close-button" (click)="onClose()">✕</button>
 
-    <h1 class="car-name">{{car.name}}</h1>
-    <div class="main-image">
-      <img [src]="selectedImage" alt="Selected car" />
-    </div>
+      <h1 class="car-name">{{car.name}}</h1>
+      <div class="main-image">
+        <img [src]="selectedImage" alt="Selected car" />
+      </div>
 
-    <div class="thumbnail-flex">
-      <div
-        class="thumbnail"
-        [class.active]="selectedImage === car.thumbnail"
-        (click)="selectImage(car.thumbnail)"
-      >
-        <img [src]="car.thumbnail" alt="Thumbnail" />
-      </div>
-      <div
-        *ngFor="let detail of car.details"
-        class="thumbnail"
-        [class.active]="selectedImage === detail"
-        (click)="selectImage(detail)"
-      >
-        <img [src]="detail" [alt]="'Detail'" />
+      <div class="thumbnail-flex">
+        <div
+          class="thumbnail"
+          [class.active]="selectedImage === car.thumbnail"
+          (click)="selectImage(car.thumbnail)"
+        >
+          <img [src]="car.thumbnail" alt="Thumbnail" />
+        </div>
+        <div
+          *ngFor="let detail of car.details"
+          class="thumbnail"
+          [class.active]="selectedImage === detail"
+          (click)="selectImage(detail)"
+        >
+          <img [src]="detail" [alt]="'Detail'" />
+        </div>
       </div>
     </div>
-  </div>
+  }
 </div>

@@ -1,0 +1,28 @@
+<div class="detail-view">
+  @if (product) {
+    <div class="detail-container">
+      <button class="close-button" (close)="onClose()">x</button>
+
+      <h1 class="product-name">{{product.name}}</h1>
+      <div class="main-image">
+        <img [src]="selectedProductImage" alt="Selected product" />
+      </div>
+
+      <div class="thumbnail-flex">
+        <div class="thumbnail"
+             [class.active]="selectedProductImage === product.thumbnail"
+             (click)="selectProduct(product.thumbnail)"
+        >
+          <img [src]="product.thumbnail" alt="Thumbnail">
+        </div>
+        <div class="thumbnail"
+             *ngFor="let detail of product.details"
+             [class.active] = "selectedProductImage === detail"
+             (click)="selectProduct(detail)"
+        >
+          <img [src]="detail" [alt]="'Detail'" />
+        </div>
+      </div>
+    </div>
+  }
+</div>

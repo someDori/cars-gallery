@@ -1,13 +1,13 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Car} from '../../models/car.model';
 import {NgForOf} from '@angular/common';
-import {SingleCarComponent} from '../single-car/single-car.component';
+import {SingleProductComponent} from '../common/single-product/single-product.component';
 
 @Component({
   selector: 'app-image-grid',
   imports: [
     NgForOf,
-    SingleCarComponent
+    SingleProductComponent
   ],
   templateUrl: './image-grid.component.html',
   styleUrl: './image-grid.component.scss'
@@ -17,6 +17,8 @@ export class ImageGridComponent {
   @Output() carSelected = new EventEmitter<Car>();
 
   onCarClick(car: Car): void {
-    this.carSelected.emit(car);
+    setTimeout(() => {
+      this.carSelected.emit(car);
+    }, 100)
   }
 }

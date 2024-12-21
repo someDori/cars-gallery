@@ -1,0 +1,19 @@
+<div class="camping-attributes-container">
+  <div class="camping-attributes-title">
+    <h2>{{ 'CAMPING_ATTRIBUTES' | translate }}</h2>
+  </div>
+
+  <div class="camping-attributes-list">
+    @if (campingAttributes) {
+      <app-attributes-grid
+        [attributes]="campingAttributes"
+        (attributeSelected)="onAttributeSelected($event)"
+      ></app-attributes-grid>
+    } @else {
+      <app-attribute-detail-view
+        [attribute]="selectedAttribute"
+        (close)="onClose()"
+      ></app-attribute-detail-view>
+    }
+  </div>
+</div>

@@ -2,15 +2,17 @@
   <div class="gallery-title">
     <h2>{{ 'AVAILABLE_CARS' | translate }}</h2>
   </div>
-  @if (!selectedCar) {
-    <app-image-grid
-      [cars]="cars"
-      (carSelected)="onCarSelect($event)"
-    ></app-image-grid>
-  } @else {
-    <app-detail-view
-      [car]="selectedCar"
-      (close)="onClose()"
-    ></app-detail-view>
-  }
+  <div class="gallery-list">
+    @if (!selectedCar) {
+      <app-image-grid
+        [cars]="cars"
+        (carSelected)="onCarSelect($event)"
+      ></app-image-grid>
+    } @else {
+      <app-detail-view
+        [car]="selectedCar"
+        (close)="onClose()"
+      ></app-detail-view>
+    }
+  </div>
 </div>

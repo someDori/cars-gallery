@@ -30,10 +30,12 @@ export class GalleryComponent {
   onCarSelect(car: Car): void {
     setTimeout(() => {
       this.selectedCar = car;
-      }, 450)
+      }, 100)
   }
 
   onClose(): void {
-    this.selectedCar = null;
+    setTimeout(() => {
+      this.selectedCar = null;
+    }, 100)
   }
 }

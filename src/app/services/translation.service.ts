@@ -17,10 +17,11 @@ export class TranslationService {
   }
 
   switchLanguage(language: string): void {
-    console.log(language);
-    this.translate.use(language);
-    localStorage.setItem('language', language);
-    this.updateLanguageAndCurrency(language);
+    setTimeout(() => {
+      this.translate.use(language);
+      localStorage.setItem('language', language);
+      this.updateLanguageAndCurrency(language);
+    }, 100)
   }
 
   private updateLanguageAndCurrency(language: string): void {

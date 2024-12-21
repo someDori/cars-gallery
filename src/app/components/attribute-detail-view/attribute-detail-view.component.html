@@ -1,0 +1,28 @@
+<div class="detail-view">
+  @if (attribute) {
+    <div class="detail-container">
+      <button class="close-button" (close)="onClose()">x</button>
+
+      <h1 class="attribute-name">{{attribute.name}}</h1>
+      <div class="main-image">
+        <img [src]="selectedAttribute" alt="Selected attribute for camping" />
+      </div>
+
+      <div class="thumbnail-flex">
+        <div class="thumbnail"
+             [class.active]="selectedAttribute === attribute.thumbnail"
+             (click)="selectedImage(attribute.thumbnail)"
+        >
+          <img [src]="attribute.thumbnail" alt="Thumbnail">
+        </div>
+          <div class="thumbnail"
+            *ngFor="let detail of attribute.details"
+            [class.active] = "selectedAttribute === detail"
+            (click)="selectedImage(detail)"
+          >
+            <img [src]="detail" [alt]="'Detail'" />
+          </div>
+      </div>
+    </div>
+  }
+</div>
