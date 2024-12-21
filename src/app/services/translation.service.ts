@@ -32,4 +32,8 @@ export class TranslationService {
   private switchCurrency(language: string): string {
     return language === 'ge' ? 'GEL' : 'USD';
   }
+
+  getTranslation(key: string): string {
+    return this.translate.instant(key); // Get translated value
+  }
 }

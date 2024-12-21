@@ -48,7 +48,10 @@
   img {
     width: 100%;
     max-height: 70vh;
-    object-fit: cover; /* Cover entire container */
+    object-fit: contain; /* Ensures the entire image is visible, even if it leaves some empty space */
+    object-position: center; /* Centers the image within the container */
+    display: block; /* Avoids any extra inline spacing issues */
+    transform: scale(0.95); /* Scales the image down slightly */
   }
 }
 

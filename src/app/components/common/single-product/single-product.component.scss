@@ -7,7 +7,11 @@
   background-color: white;
 
   img {
+    width: 100%; /* Ensures the image fills the container's width */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Adjusts the image to cover the parent container */
     border-radius: 8px 8px 0 0;
+    display: block; /* Prevents extra spacing below the image */
   }
 
   &:hover {

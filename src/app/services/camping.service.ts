@@ -9,7 +9,7 @@ export class CampingService {
   private attributes: CampingAttribute[] = [
     {
       id: 0,
-      name: "Tent",
+      name: "TENT",
       thumbnail: '/assets/images/camping/tent/main.jpg',
       details: [
         '/assets/images/camping/tent/tent-1.jpg',
@@ -20,7 +20,7 @@ export class CampingService {
     },
     {
       id: 1,
-      name: "Sleeping bag",
+      name: "SLEEPING_BAG",
       thumbnail: '/assets/images/camping/sleeping-bag/main.jpg',
       details: [
        '/assets/images/camping/sleeping-bag/sleeping-bag-1.jpg',
@@ -32,7 +32,7 @@ export class CampingService {
     },
     {
       id: 2,
-      name: "Bag",
+      name: "CAMPING_BAG",
       thumbnail: '/assets/images/camping/hiking-bag/main.jpg',
       details: [
         '/assets/images/camping/hiking-bag/hiking-bag-1.jpg',

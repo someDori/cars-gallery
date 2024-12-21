@@ -3,7 +3,7 @@
     <div class="detail-container">
       <button class="close-button" (click)="onClose()">x</button>
 
-      <h1 class="attribute-name">{{attribute.name}}</h1>
+      <h1 class="attribute-name">{{translationService.getTranslation(attribute.name)}}</h1>
       <div class="main-image">
         <img [src]="selectedAttribute" alt="Selected attribute for camping" />
       </div>
