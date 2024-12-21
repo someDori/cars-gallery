@@ -1,17 +1,29 @@
 .single-element {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   transition: opacity 0.3s ease;
-  aspect-ratio: 16 / 9;
-  //border: 1px solid var(--gray);
   border-radius: 8px;
   cursor: pointer;
   background-color: white;
+  overflow: hidden;
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+  }
 
   img {
-    width: 100%; /* Ensures the image fills the container's width */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: cover; /* Adjusts the image to cover the parent container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px 8px 0 0;
-    display: block; /* Prevents extra spacing below the image */
   }
 
   &:hover {
@@ -25,5 +37,10 @@
 
   .spacing {
     height: 1rem;
+    flex-shrink: 0;
   }
+}
+
+:host-context(.image-grid) .single-element {
+  height: 100%;
 }

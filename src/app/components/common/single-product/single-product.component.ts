@@ -2,7 +2,6 @@ import {Component, Input} from '@angular/core';
 import {CampingAttribute} from '../../../models/CampingAttribute.model';
 import {Car} from '../../../models/car.model';
 import {TranslationService} from '../../../services/translation.service';
-import {CurrencyService} from '../../../services/currency.service';
 
 @Component({
   selector: 'app-single-product',
@@ -19,12 +18,9 @@ export class SingleProductComponent {
 
   public getElementName(element: CampingAttribute | Car): string {
     if (this.isCampingAttribute(element)) {
-      if (this.translationService.currentLanguage === 'ge') {
-        return this.translationService.getTranslation(element.name); // Fetch translation from ge.json
-      }
-      return this.translationService.getTranslation(element.name); // Default to English or fallback
+      return this.translationService.getTranslation(element.name);
     }
-    return element.name; // Replace `carName` with the correct property
+    return element.name;
   }
 
   private isCampingAttribute(element: CampingAttribute | Car): boolean {

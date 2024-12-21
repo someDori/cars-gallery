@@ -1,8 +1,10 @@
 <div class="single-element">
   @if (element) {
-    <img
-      [src]=element.thumbnail
-      [alt]="element.name"/>
+    <div class="image-wrapper">
+      <img
+        [src]="element.thumbnail"
+        [alt]="element.name"/>
+    </div>
     <p>{{getElementName(element)}}</p>
     <div class="spacing"></div>
   }
