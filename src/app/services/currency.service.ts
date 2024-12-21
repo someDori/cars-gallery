@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry, map } from 'rxjs/operators';
 import { CurrencyResponse, CurrencyRate } from '../interfaces/currency.interface';
-import { getApiKey, getBaseUrl } from '../../environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,11 @@ export class CurrencyService {
 
   getCurrencyRates(sourceCurrency: string, targetCurrencies: string[]): Observable<CurrencyRate[]> {
     const params = new HttpParams()
-      .set('access_key', getApiKey('currencyExchangeApiKey'))
+      .set('access_key', environment.apiKeys.currencyExchangeApiKey)
       .set('currencies', targetCurrencies.join(','))
       .set('source', sourceCurrency)
 
-    return this.http.get<CurrencyResponse>(getBaseUrl('apilayer'), { params })
+    return this.http.get<CurrencyResponse>(environment.baseUrls.apilayer, { params })
       .pipe(
         retry(3),
         map(response => this.transformResponse(response, sourceCurrency, targetCurrencies)),
