@@ -35,17 +35,6 @@ export class CarsService {
       ]
     },
     {
-      id: 2,
-      name: "Tesla Model 3",
-      thumbnail: '/assets/images/cars/tesla-model-3/main.avif',
-      details: [
-        '/assets/images/cars/tesla-model-3/tesla-model-3-1.avif',
-        '/assets/images/cars/tesla-model-3/tesla-model-3-2.avif',
-        '/assets/images/cars/tesla-model-3/tesla-model-3-3.avif',
-        '/assets/images/cars/tesla-model-3/tesla-model-3-4.avif'
-      ]
-    },
-    {
       id: 3,
       name: "Nissan Versa",
       thumbnail: '/assets/images/cars/nissan-versa/main.avif',
