@@ -1,0 +1,15 @@
+.home {
+  margin: 3rem;
+}
+
+@media (width <= 900px) {
+  .home {
+    margin: 2rem;
+  }
+}
+
+@media (width <= 575px) {
+  .home {
+    margin: 1rem;
+  }
+}

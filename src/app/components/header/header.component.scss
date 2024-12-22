@@ -1,59 +1,81 @@
 .header-container {
-    margin: 3rem;
-    padding: 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    background-color: white;
-    color: black;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border-radius: 5px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: white;
+  color: black;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border-radius: 5px;
 
-    .header-title {
-      h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        margin: 0;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-        -webkit-user-select: none; /* Safari */
-        -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* IE10+/Edge */
-        user-select: none; /* Standard */
+  .header-title {
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+  .header-details {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    gap: 1rem;
+
+    .language-switcher {
+      button {
+        background-color: var(--green);
+        border: none;
+        color: var(--white);
+        padding: 1rem 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 90px;
+      }
+
+      *:hover {
+        opacity: 0.9;
       }
     }
+
+    .contact-info {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media (width <= 575px) {
+  .header-container {
+    flex-direction: column;
+
     .header-details {
-      margin-left: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      text-align: right;
-      gap: 1rem;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: start;
+      margin-top: 1.5rem;
 
       .language-switcher {
-        button {
-          background-color: var(--green);
-          border: none;
-          color: var(--white);
-          padding: 1rem 1.5rem;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 1rem;
-          cursor: pointer;
-          border-radius: 90px;
-        }
-
-        *:hover {
-          opacity: 0.9;
-        }
+        order: 2;
       }
 
       .contact-info {
-        font-size: 0.9rem;
-        line-height: 1.5;
+        order: 1;
       }
     }
   }
+}
