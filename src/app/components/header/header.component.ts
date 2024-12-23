@@ -1,6 +1,7 @@
 import {Component, HostListener} from '@angular/core';
 import {TranslationService} from '../../services/translation.service';
 import {TranslatePipe} from '@ngx-translate/core';
+import {ContactDataService} from '../../services/contact-data.service';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,7 @@ export class HeaderComponent {
     this.headerText = this.headerTextSize();
   }
 
-  constructor(public translationService: TranslationService) {}
+  constructor(public translationService: TranslationService, public contactDataService: ContactDataService) {}
 
   @HostListener('window:resize', ['$event'])
   onWindowResize() {

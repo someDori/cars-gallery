@@ -13,8 +13,8 @@
     </div>
 
     <div class="contact-info">
-      <h4>{{"CONTACT_US" | translate}}: info&#64;example.com</h4>
-      <h4>{{"PHONE" | translate}}: +995 599 123 456</h4>
+      <h4>{{"CONTACT_US" | translate}}: {{contactDataService.getEmailAddress()}}</h4>
+      <h4>{{"PHONE" | translate}}: {{contactDataService.getNumber()}}</h4>
     </div>
   </div>
 </div>
