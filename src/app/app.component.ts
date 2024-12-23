@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {TranslationService} from './services/translation.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +8,5 @@ import {TranslationService} from './services/translation.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  constructor(public translationService: TranslationService) {}
+  constructor() {}
 }
